@@ -1,0 +1,115 @@
+.container-partners {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1275px;
+    padding: 3rem;
+    height: 99vh;
+    margin-bottom: 3rem;
+}
+
+.container-partners .title-partners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    gap: 5rem;
+}
+
+.container-partners .line {
+    height: 1px;
+    width: 400px;
+    background-color: #000;
+}
+
+.container-partners .partner-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    height: 80vh;
+}
+
+.container-partners img {
+    width: 400px;
+    height: auto;
+}
+
+.container-partners .partner-images .partners {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-partners .partner-images .partners img {
+    width: 150px;
+    height: auto;
+}
+
+@media (max-width: 1280px) {
+    .container-partners .line {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .container-partners .partner-images .partners img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 970px) {
+    .container-partners .title-partners {
+        gap: 2rem;
+        font-size: 2rem;
+    }
+
+    .container-partners .line {
+        width: 200px;
+    }
+}
+
+@media (max-width: 850px) {
+    .container-partners .title-partners {
+        margin-bottom: 5rem;
+    }
+
+    .container-partners .partner-images {
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .container-partners .partner-images .partners  {
+        padding-left: 3.7rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container-partners .title-partners {
+        font-size: 1.8rem;
+        gap: 1.2rem;
+    }
+
+    .container-partners .line {
+        width: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-partners img {
+        width: 300px;
+    }
+
+    .container-partners .partner-images .partners img {
+        width: 100px;
+        margin-left: 1.4rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .container-partners .title-partners {
+        font-size: 1.3rem;
+    }
+}
