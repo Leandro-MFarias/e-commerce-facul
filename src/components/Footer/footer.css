@@ -46,6 +46,15 @@
 }
 
 @media (max-width: 480px) {
+    .footer {
+        height: 65vh;
+    }
+
+    .footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .footer .footer-container .footer-info h4 {
         font-size: 16px; 
     }

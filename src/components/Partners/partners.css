@@ -4,7 +4,7 @@
     margin: auto;
     max-width: 1275px;
     padding: 3rem;
-    height: 99vh;
+    height: 100vh;
     margin-bottom: 3rem;
 }
 
@@ -28,7 +28,6 @@
     justify-content: center;
     align-items: center;
     gap: 15rem;
-    height: 80vh;
 }
 
 .container-partners img {
@@ -103,13 +102,26 @@
     }
 
     .container-partners .partner-images .partners img {
-        width: 100px;
-        margin-left: 1.4rem;
+        width: 70px;
     }
 }
 
 @media (max-width: 540px) {
     .container-partners .title-partners {
         font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .container-partners img {
+        width: 170px;
+    }
+
+    .container-partners .partner-images .partners img {
+        width: 55px;
+    }
+
+    .container-partners .partner-images .partners  {
+        padding-left: 2.2rem;
     }
 }
