@@ -4,15 +4,13 @@
     margin: auto;
     max-width: 1275px;
     padding: 3rem;
-    height: 100vh;
-    margin-bottom: 3rem;
+    height: 80vh;
 }
 
 .container-partners .title-partners {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
     font-size: 2.5rem;
     gap: 5rem;
 }
@@ -28,6 +26,7 @@
     justify-content: center;
     align-items: center;
     gap: 15rem;
+    height: 100%;
 }
 
 .container-partners img {
@@ -94,6 +93,14 @@
     .container-partners .line {
         width: 120px;
     }
+
+    .container-partners img {
+        width: 350px;
+    }
+
+    .container-partners .partner-images .partners img {
+        width: 100px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -109,6 +116,10 @@
 @media (max-width: 540px) {
     .container-partners .title-partners {
         font-size: 1.3rem;
+    }
+
+    .container-partners .partner-images .partners img {
+        width: 65px;
     }
 }
 
