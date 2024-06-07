@@ -1,11 +1,22 @@
 import { useContext } from "react";
 import { BsCartDashFill } from "react-icons/bs";
 import { CartContext } from "../../context";
+import { IProduct } from "../Products";
 
-export const CartItem: React.FC = ({ data }) => {
-    const { cart, setCart } = useContext(CartContext)
+export interface CartItemProps {
+    data: IProduct
+}
 
-    const { image, title, descricao, preco, id } = data
+export const CartItem: React.FC<CartItemProps> = ({ data }) => {
+    const context = useContext(CartContext)
+
+    if(!context) {
+        throw new Error("CartItem precisa estar dentro de um CartProvider")
+    }
+
+    const { cart, setCart } = context
+
+    const { image, name, descricao, preco, id } = data
 
     function handleRemoveItem() {
         const removeItem = cart.filter((item) => item.id !== id)
@@ -18,7 +29,7 @@ export const CartItem: React.FC = ({ data }) => {
 
             <div className="produto-info">
                 <div className="title-price">
-                    <h3>{title}</h3>
+                    <h3>{name}</h3>
                     <p>{preco.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL'

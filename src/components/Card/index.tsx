@@ -2,19 +2,20 @@ import { useContext } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from 'react-router-dom'
 import { CartContext } from "../../context";
+import { IProduct } from "../Products";
 
 export interface CardProps {
-    image: string,
-    name: string,
-    preco: number,
-    descricao: string,
-    id: number
+    data: IProduct;
 }
 
 export const Card: React.FC<CardProps> = ({ data }) => {
     const { image, name, descricao, preco, id } = data
 
-    const { cart, setCart } = useContext(CartContext)
+    const context = useContext(CartContext)
+    if(!context) {
+        throw new Error("CartItem precisa estar dentro de um CartProvider")
+    }
+    const { cart, setCart } = context
 
     function handleAddCart() {
         setCart([...cart, data])

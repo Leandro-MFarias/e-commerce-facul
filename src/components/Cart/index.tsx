@@ -1,13 +1,18 @@
 import { useContext } from "react"
 import { CartContext } from "../../context"
 import { CartItem } from "../CartItem"
-
+import { IProduct } from "../Products"
 import './cart.css'
 
 export const Cart: React.FC = () => {
-    const { cart } = useContext(CartContext)
+    const context = useContext(CartContext)
+    if(!context) {
+        throw new Error("CartItem precisa estar dentro de um CartProvider")
+    }
 
-    const totalPrice = cart.reduce((acc, item) => item.preco + acc, 0)
+    const { cart } = context
+
+    const totalPrice = cart.reduce((acc: number, item: IProduct) => item.preco + acc, 0)
 
     return (
         <section className="cart-container">
@@ -18,7 +23,7 @@ export const Cart: React.FC = () => {
             })}</h2>
             <div className="cart-product">
                 {
-                    cart.map(cartItem => <CartItem key={cartItem.id} data={cartItem} />)
+                    cart.map((cartItem: IProduct) => <CartItem key={cartItem.id} data={cartItem} />)
                 }
             </div>
         </section>
