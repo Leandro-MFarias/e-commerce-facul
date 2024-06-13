@@ -6,7 +6,7 @@ import './catalogo.css'
 export const Catalogo: React.FC = () => {
     return (
         <section className='catalogo' id='catalogo'>
-            <h2>Catálogo</h2>
+            <h2>Nosso Catálogo de Produtos!</h2>
 
             <div className='produtos'>
                 {Products.map(product => (
