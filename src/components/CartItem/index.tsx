@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { BsCartDashFill } from "react-icons/bs";
 import { CartContext } from "../../context";
 import { IProduct } from "../Products";
+import './cartItem.css'
 
 export interface CartItemProps {
     data: IProduct
@@ -10,7 +11,7 @@ export interface CartItemProps {
 export const CartItem: React.FC<CartItemProps> = ({ data }) => {
     const context = useContext(CartContext)
 
-    if(!context) {
+    if (!context) {
         throw new Error("CartItem precisa estar dentro de um CartProvider")
     }
 
@@ -24,23 +25,18 @@ export const CartItem: React.FC<CartItemProps> = ({ data }) => {
     }
 
     return (
-        <div className='produto'>
-            <img src={image} alt="" />
+        <section className='item-cart'>
+            <img src={image} alt={name} />
 
-            <div className="produto-info">
-                <div className="title-price">
-                    <h3>{name}</h3>
-                    <p>{preco.toLocaleString('pt-br', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    })}</p>
-                </div>
-
-                <div className="descricao">
-                    <p>{descricao}</p>
-                    <button onClick={ handleRemoveItem }><BsCartDashFill /> Remover</button>
-                </div>
+            <div className="info-cart">
+                <h3>{name}</h3>
+                <p className="info-price"><strong>{preco.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL'
+                })}</strong></p>
+                <p className="cart-descricao">{descricao}</p>
+                <button onClick={handleRemoveItem}><BsCartDashFill /> Remover</button>
             </div>
-        </div>
+        </section>
     )
 }

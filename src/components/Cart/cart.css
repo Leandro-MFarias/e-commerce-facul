@@ -1,16 +1,31 @@
 .cart-container {
-    padding: 4rem;
+    background-color: #000;
+}
+
+.cart-items {
+    max-width: 1230px;
     margin: 0 auto;
-    width: 1240px;
 }
 
-.cart-container h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.cart-container .cart-product {
+.cart-total {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+.cart-total h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.cart-product {
+    display: flex;
+    flex-direction: column;
     gap: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .cart-total {
+        padding: 4rem 2rem;
+    }
 }

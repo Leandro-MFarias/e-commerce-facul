@@ -1,29 +1,39 @@
-import { useParams } from "react-router-dom"
-import { Products } from "../Products"
-import './produto.css'
+import { IProduct } from "../Products";
+import { FaCartShopping } from "react-icons/fa6";
+import { useContext } from "react";
+import { CartContext } from "../../context";
+import './produto.css';
 
-export const ProductItem: React.FC = () => {
-    const { id } = useParams<{ id: string }>()
+export interface CardProps {
+    data: IProduct;
+}
 
-    const product = Products.find(p => p.id === parseInt(id || '', 10))
-    if (!product) {
-        return <div>Produto não encontrado</div>
+export const ProductItem: React.FC<CardProps> = ({ data }) => {
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error("CartItem precisa estar dentro de um CartProvider");
+    }
+    const { cart, setCart } = context;
+
+    function handleAddCart() {
+        setCart([...cart, data]);
     }
 
     return (
-        <article className="container-item">
-            <div className="item">
-                <img src={product.image} alt={product.name} />
-
+        <section className="container-item">
+            <div className="item" key={data.id}>
+                <img src={data.image} alt={data.name} />
                 <div className="item-info">
-                    <h3>{product.name}</h3>
-                    <div className="item-price">
-                        <p>{product.descricao}</p>
-                        <p><strong>{product.preco}R$</strong></p>
-                    </div>
-                    <button>Carrinho</button>
+                    <h3>{data.name}</h3>
+                    <p className="item-price">
+                        <strong>{data.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</strong>
+                    </p>
+                    <p className="item-descricao">{data.descricao}</p>
+                    <button onClick={handleAddCart}>
+                        <FaCartShopping /> Carrinho
+                    </button>
                 </div>
             </div>
-        </article>
-    )
+        </section>
+    );
 }

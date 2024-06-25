@@ -1,95 +1,96 @@
 .container-item {
-    height: 80vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
+
 .item {
     display: flex;
-    width: 550px;
-    padding: 3rem 2rem 3rem 1rem;
-    border-radius: 25px;
-    box-shadow: 0px 0px 15px -1px rgba(163, 162, 162, 0.75);
+    gap: 4rem;
 }
 
 .item img {
-    width: 300px;
+    width: 500px;
 }
 
-.item .item-info {
+.item-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    gap: 3rem;
 }
 
-.item .item-info h3{
+.item-info h3 {
+    font-size: 3.5rem;
+}
+
+.item-info .item-price {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.item-info .item-descricao {
     font-size: 2rem;
-}
-
-.item .item-info .item-price {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
     margin-bottom: 5rem;
-    font-size: 1.6rem;
-    gap: 20px;
+    max-width: 500px;
 }
 
-.item .item-info button {
-    background-color: transparent;
-    border: 2px solid #000;
-    font-size: 16px;
-    padding: 8px 14px;
+.item-info button {
+    align-self: flex-start;
+    padding: 15px 50px;
     border-radius: 50px;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-}
-
-.item .item-info button:hover {
-    background-color: #017750;
+    background-color: #000;
     color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.3s ease-in;
 }
 
-@media (max-width: 540px) {
-    .item {
-        width: 450px;
-    }
+.item-info button:hover {
+    background-color: #FF4545;
 }
 
-@media (max-width: 428px) {
-    .item {
-        width: 80%;
-    }
-
+@media (max-width: 698px) {
     .item img {
-        width: 180px;
-        height: 180px;
-        margin: auto;
+        width: 300px;
+    }
+
+    .item-info {
+        gap: 1rem;
+    }
+
+    .item-info h3 {
+        font-size: 3rem;
     }
 }
 
-@media (max-width: 320px ) {
+@media (max-width: 500px) {
     .item {
-        height: 90%;
-        flex-direction: column;
+        margin-right: 2rem;
     }
-
     .item img {
-        width: 130px;
-        height: 130px;
+        width: 240px;
+        height: 240px;
     }
 
-    .item .item-info h3 {
+    .item-info {
+        gap: 0;
+    }
+
+    .item-info h3 {
+        font-size: 2rem;
+    }
+
+    .item-info .item-price {
         font-size: 1.6rem;
     }
 
+    .item-info .item-descricao {
+        font-size: 1.2rem;
+    }
 
-
-    .item .item-info .item-price {
+    .item-info button {
         font-size: 1.4rem;
-        margin-bottom: 0;
-        gap: 5px;
+        padding: 8px 10px;
     }
 }

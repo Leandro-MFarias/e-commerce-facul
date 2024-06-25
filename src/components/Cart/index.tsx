@@ -6,7 +6,7 @@ import './cart.css'
 
 export const Cart: React.FC = () => {
     const context = useContext(CartContext)
-    if(!context) {
+    if (!context) {
         throw new Error("CartItem precisa estar dentro de um CartProvider")
     }
 
@@ -16,15 +16,20 @@ export const Cart: React.FC = () => {
 
     return (
         <section className="cart-container">
-            <h2>Seu Carrinho!</h2>
-            <h2>Total: {totalPrice.toLocaleString('pt-br', {
-                style: 'currency',
-                currency: 'BRL'
-            })}</h2>
-            <div className="cart-product">
-                {
-                    cart.map((cartItem: IProduct) => <CartItem key={cartItem.id} data={cartItem} />)
-                }
+            <div className="cart-items">
+                <div className="cart-total">
+                    <h2>Seu Carrinho!</h2>
+                    <h2>Total: {totalPrice.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    })}
+                    </h2>
+                </div>
+                <div className="cart-product">
+                    {
+                        cart.map((cartItem: IProduct) => <CartItem key={cartItem.id} data={cartItem} />)
+                    }
+                </div>
             </div>
         </section>
     )
