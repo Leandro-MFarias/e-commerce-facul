@@ -6,7 +6,7 @@
 }
 
 .header h2:hover {
-    color: dodgerblue;
+    color: #FF4545;
 }
 
 .navbar {
@@ -34,7 +34,7 @@
 }
 
 .navbar .nav-menu .nav-item .nav-link:hover{
-    color: dodgerblue;
+    color: #FF4545;
 }
 
 .navbar .hamburger {
