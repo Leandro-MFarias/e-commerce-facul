@@ -73,18 +73,18 @@
 }
 
 .produto .descricao button {
-    background-color: transparent;
-    border: 2px solid #000;
-    font-size: 16px;
-    padding: 8px 14px;
+    align-self: flex-start;
+    padding: 10px 14px;
     border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.6rem;
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in;
 }
 
 .produto .descricao button:hover {
-    background-color: #017750;
-    color: #fff;
+    background-color: #FF4545;
 }
 
 @media (max-width: 1280px) {
