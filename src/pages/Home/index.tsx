@@ -1,3 +1,4 @@
+import { ArrowUp } from "../../components/ArrowUp"
 import { Banner } from "../../components/Banner"
 import { Catalogo } from "../../components/Catalogo"
 import { Footer } from "../../components/Footer"
@@ -8,6 +9,7 @@ import { Partners } from "../../components/Partners"
 export const Home: React.FC = () => {
     return (
         <>
+            <ArrowUp />
             <Header />
             <Hero />
             <Banner />
